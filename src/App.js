@@ -22,6 +22,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/contact/*" element={<h2>Multiple Match</h2>} />
+        <Route path="/contact/:contactId" element={<h2>Dynamic Match</h2>} />
         <Route path="settings" element={<Settings />} />
       </Routes>
     </div>
