@@ -1,30 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <div className="my-3">
       <span>
         {" "}
-        <Link to="/" className="btn btn-danger me-2">
+        <NavLink
+          to="/"
+          className={(activeLink) =>
+            activeLink.isActive
+              ? "btn btn-danger me-2"
+              : "btn btn-outline-danger me-2"
+          }
+        >
           Home
-        </Link>
+        </NavLink>
       </span>{" "}
       <span>
         {" "}
-        <Link to="/about" className="btn btn-success me-2">
+        <Link to="/about" className="btn btn-outline-success me-2">
           About
         </Link>
       </span>{" "}
       <span>
         {" "}
-        <Link to="/contact" className="btn btn-info me-2">
+        <NavLink
+          to="/contact"
+          className={(activeLink) =>
+            activeLink.isActive
+              ? "btn btn-info me-2"
+              : "btn btn-outline-info me-2"
+          }
+        >
           Contact
-        </Link>
+        </NavLink>
       </span>{" "}
       <span>
         {" "}
-        <Link to="/settings" className="btn btn-warning me-2">
+        <Link to="/settings" className="btn btn-outline-warning me-2">
           Settings{" "}
         </Link>
       </span>
