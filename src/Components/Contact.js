@@ -1,13 +1,25 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  if (loading) {
+    return <Navigate to="/about" />;
+  }
 
   // go back handler
   const goBackHome = () => {
-    console.log("go back home");
     navigate("/");
+
+    // 1 step back
+    // navigate(-1);
+  };
+
+  const goToAboutPage = () => {
+    console.log("go about page");
+    setLoading(true);
   };
 
   return (
@@ -22,10 +34,16 @@ const Contact = () => {
     >
       Contact component
       <button
-        className="btn btn-danger btn-sm  d-block  mx-auto my-2 text-center"
+        className="btn btn-outline-danger btn-sm  d-block  mx-auto my-2 text-center"
         onClick={goBackHome}
       >
         Go Back Home
+      </button>
+      <button
+        className="btn btn-outline-success btn-sm  d-block  mx-auto my-2 text-center"
+        onClick={goToAboutPage}
+      >
+        Go To About Page
       </button>
     </div>
   );

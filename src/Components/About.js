@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 const About = () => {
-  console.log("Outlet :::", Outlet);
   return (
     <div
       style={{
