@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const navigate = useNavigate();
+
+  // go back handler
+  const goBackHome = () => {
+    console.log("go back home");
+    navigate("/");
+  };
+
   return (
     <div
       style={{
@@ -12,6 +21,12 @@ const Contact = () => {
       }}
     >
       Contact component
+      <button
+        className="btn btn-danger btn-sm  d-block  mx-auto my-2 text-center"
+        onClick={goBackHome}
+      >
+        Go Back Home
+      </button>
     </div>
   );
 };
