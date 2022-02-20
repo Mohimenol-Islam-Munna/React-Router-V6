@@ -1,6 +1,8 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 const About = () => {
+  console.log("Outlet :::", Outlet);
   return (
     <div
       style={{
@@ -11,7 +13,18 @@ const About = () => {
         borderRadius: "10px",
       }}
     >
-      About component
+      <h2>About component </h2>
+      <div
+        style={{
+          width: "50%",
+          border: "1px solid palegreen",
+          padding: "10px 10px",
+          margin: "10px auto",
+          borderRadius: "10px",
+        }}
+      >
+        <Outlet />
+      </div>
     </div>
   );
 };
